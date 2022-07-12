@@ -1,0 +1,17 @@
+// Шаблонный селектор для адаптива медиа-ресурсов
+%adaptive-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// Шаблонный селектор для выравнивания элемента по центру
+%center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

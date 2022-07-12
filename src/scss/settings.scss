@@ -1,0 +1,19 @@
+//  Настроки расположения глобальных элементов страницы -------------------
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+//  Настройка контейнера --------------------------------------------------
+._container {
+    max-width: $maxWidthContainer + px;
+    @include adaptive-value("padding-left", 20, 15);
+    @include adaptive-value("padding-right", 20, 15);
+    margin: 0 auto;
+}

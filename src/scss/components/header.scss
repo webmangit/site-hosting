@@ -1,0 +1,244 @@
+.header {
+    &__top {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #262626;
+        position: relative;
+        z-index: 5;
+    }
+    &__top-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &__logo {
+        img {
+            @include adaptive-value("height", 89, 60);
+        }
+    }
+    &__contacts {
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 20px;
+        } 
+    }
+    &__contacts-item {
+        display: flex;
+    }
+    &__contacts-item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    &__contacts-item-img {
+        margin-right: 8px;
+        width: 30px;
+        height: 30px;
+        background: #515151;
+        border-radius: 50%;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;  
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+    }
+    &__contacts-item-contact-data {
+        font-size: 16px;
+        color: #ffffff;
+    }
+    &__contacts-item-contact-note {
+        text-align: end;
+        font-size: 14px;
+        font-weight: 200;
+        color: #858585;
+        line-height: 100%;
+        font-style: italic;
+        span {
+            color: #ffffff;
+        }
+    }
+    &__join {
+        display: flex;
+        @media (max-width: 767px) {
+            padding-top: 20px;
+            padding-bottom: 40px;
+            justify-content: space-between;
+        }
+    }
+    &__btn {
+        margin-right: 36px;
+        display: inline-block;
+        border-radius: 5px;
+        background: #67A8D2;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease 0s;
+        a {
+            @extend %center-flex;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            @include adaptive-value("padding-left", 41, $mediumIndent);
+            @include adaptive-value("padding-right", 41, $mediumIndent);
+            color: #FFFFFF;
+        }
+    }
+    &__btn:hover {
+        background: #3e79a0;
+    }
+    &__cabinet {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #67A8D2;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        position: relative;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+    }
+    &__cabinet:hover {
+        background: #3e79a0;
+    }
+    &__cabinet-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__burger {
+        display: none;
+        @media (max-width: 767px) {
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 18px;
+            cursor: pointer;
+            z-index: 20;
+            & span,
+            &::before,
+            &::after {
+                position: absolute;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                transition: all 0.3s ease 0s;
+                background-color: #fff;
+            }
+            & span {
+                top: 50%;
+                transform: scale(1) translate(0px, -50%);
+            }
+            &::before {
+                content: "";
+                top: 0;
+            }
+            &::after {
+                content: "";
+                bottom: 0;
+            }
+            &._active span {
+                transform: scale(0) translate(0px, -50%);
+            }
+            &._active::before {
+                top: 50%;
+                transform: rotate(-45deg) translate(0px, -50%);
+            }
+            &._active::after {
+                bottom: 50%;
+                transform: rotate(45deg) translate(0px, 50%);
+            }
+        }
+    }
+    &__bottom {
+        position: relative;
+        @media (min-width: 767px) {
+            padding-top: 16px;
+            padding-bottom: 18px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+    &__menu {
+        @media (max-width: 767px) {
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            padding-top: 130px;
+            padding-left: 15px;
+            padding-right: 15px;
+            transition: right 0.3s ease 0s;
+            overflow: auto;
+            background-color: rgb(38, 38, 38);
+            &._active {
+                right: 0;
+            }
+        }
+    }
+    &__menu-list {
+        li {
+            position: relative;
+        }
+        li:not(:last-child)::after {
+                content: "";
+                height: 20px;
+                border-right: 1px solid rgba(38, 38, 38, 0.2);
+                position: absolute;
+                top: 50%;
+                @include adaptive-value("right", -65, 28);
+                transform: translate(0px, -50%);
+        }
+
+        @media (min-width: 767px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            li:hover {
+                text-decoration: underline;
+            }
+        }
+        @media (max-width: 767px) {
+            border-bottom: 1px solid #ffffff;
+            margin-bottom: 20px;
+            li {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__menu-position-li {
+        position: relative;
+    }
+    &__menu-link {
+        text-transform: uppercase;
+        color: #262626;
+        cursor: pointer;
+        @media (max-width: 767px) {
+            color: #ffffff;
+        }
+    }
+    &__menu-link-wrapper {
+        display: flex;
+        align-items: center;
+        a {
+            margin-right: 7px;
+        }
+        img {
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+    &__menu-sub-list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease 0s;
+    }
+}
+

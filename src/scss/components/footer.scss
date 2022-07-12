@@ -1,0 +1,168 @@
+.footer {
+    background-color: #262626;
+    color: #ffffff;
+    font-size: $smallText + px;
+    line-height: 1.5;
+    &__container {
+        @include adaptive-value("padding-top", 89, $mediumIndent);
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: auto minmax(335px, 0.3fr) minmax(252px, 0.3fr);
+        @include adaptive-value("gap", 54, $mediumIndent);
+        @include adaptive-value("margin-bottom", 40, $mediumIndent);
+        @media(max-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media(max-width: 550px) {
+            grid-template-columns: 1fr;
+        }
+
+    }
+    &__about {
+        @media(max-width: 1024px) {
+            grid-column-start: span 2;
+        }
+        @media(max-width: 550px) {
+            grid-column-start: span 1;
+        }
+    }
+    &__about-description {
+        color: #858585;
+        @include adaptive-value("margin-bottom", 68, $mediumIndent);
+    }
+
+    &__about-description-img {
+        margin-bottom: 15px;
+    }
+    &__about-resources {
+        display: flex;
+        justify-content: space-between;
+        @media(max-width: 1024px) {
+            justify-content: flex-start;
+        }
+        @media (max-width: 400px) {
+            display: block;
+        }
+    }
+    &__about-resources-company {
+        margin-right: 20px;
+        @media (max-width: 400px) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+    &__about-resources-services {}
+    &__contacts {
+        // @media(max-width: 1024px) {
+        //     grid-column-start: span 1;
+        // }
+    }
+    &__contacts-item {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    &__contacts-item-img {
+        width: 30px;
+        height: 30px;
+        background: #515151;
+        border-radius: 50%;
+        position: absolute;
+        img {
+            position: absolute;
+            top: 50%;  
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+    }
+    &__contacts-item-contact {
+        padding-left: 40px;
+    }
+    &__contacts-item-contact-title {
+        color: #858585;
+    }
+    &__contacts-item-contact-data {
+        font-weight: 600;
+    }
+    &__social {
+        
+    }
+    &__social-icons-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        @media (max-width: 550px) {
+            flex-direction: row;
+        }
+    }
+    &__social-icons {
+        display: inline-grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        @include adaptive-value("margin-bottom", 48, $mediumIndent);
+    }
+    &__social-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, #7CB4D8 0%, rgba(191, 230, 255, 0) 100%);
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;  
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    }
+    &__social-button-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        @media (max-width: 550px) {
+            flex-direction: row;
+        }
+    }
+    &__social-button {
+        display: inline-block;
+        background: #67A8D2;
+        border-radius: 5px;
+        transition: all 0.3s ease 0s;
+        a {
+            @extend %center-flex;
+            padding: 5px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+    }
+    &__social-button:hover {
+        background: #3e79a0;
+    }
+
+    &__politics {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 77px;
+        border-top: 1px solid #858585;
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
+    &__politics-item {
+        color: #858585;
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.resources {
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        color: #858585;
+        margin-bottom: 10px;
+    }
+    &__item {
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
